@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://coe704d6on06m"]
+
+[ext_resource type="Texture2D" uid="uid://d1i5v10qnajux" path="res://xlbhdz8z.bmp" id="1_3ysdq"]
+[ext_resource type="Script" path="res://World/pipe_container.gd" id="2_inky5"]
+[ext_resource type="PackedScene" uid="uid://3vy3p01yp8v8" path="res://Bird/bird.tscn" id="3_tlfhr"]
+[ext_resource type="PackedScene" uid="uid://dublovg6bm48m" path="res://Ground/ground.tscn" id="4_ofqmr"]
+[ext_resource type="PackedScene" uid="uid://dlyi3323s0he2" path="res://GUI/gui.tscn" id="5_gbo2p"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fl0o7"]
+
+[node name="World" type="Node2D"]
+
+[node name="Spawner" type="Marker2D" parent="."]
+position = Vector2(82, -80)
+
+[node name="Despawner" type="Marker2D" parent="."]
+position = Vector2(-72, -80)
+
+[node name="Background" type="Sprite2D" parent="."]
+visibility_layer = 4
+position = Vector2(0, -80)
+texture = ExtResource("1_3ysdq")
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 256)
+
+[node name="PipeContainer" type="Node" parent="." node_paths=PackedStringArray("spawner", "despawner")]
+script = ExtResource("2_inky5")
+spawner = NodePath("../Spawner")
+despawner = NodePath("../Despawner")
+
+[node name="PipeCooldown" type="Timer" parent="PipeContainer"]
+wait_time = 2.0
+
+[node name="Bird" parent="." instance=ExtResource("3_tlfhr")]
+visibility_layer = 2
+z_index = 3
+position = Vector2(-32, -88)
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+
+[node name="CeilingBound" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(0, -184)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_fl0o7")
+
+[node name="Ground" parent="." node_paths=PackedStringArray("spawner", "despawner") instance=ExtResource("4_ofqmr")]
+spawner = NodePath("../Spawner")
+despawner = NodePath("../Despawner")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -81)
+zoom = Vector2(5, 5)
+
+[node name="GUIContainer" parent="." instance=ExtResource("5_gbo2p")]
+
+[connection signal="timeout" from="PipeContainer/PipeCooldown" to="PipeContainer" method="_on_pipe_cooldown_timeout"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://s4ewu5y1wue"]
+
+[ext_resource type="Script" path="res://Pipe/pipe.gd" id="1_cmdy5"]
+[ext_resource type="AudioStream" uid="uid://b8h6o06er3tig" path="res://SFX/sfx_point.wav" id="2_nesgg"]
+[ext_resource type="Texture2D" uid="uid://d1i5v10qnajux" path="res://spritesheet.bmp" id="3_nip4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ojlp"]
+size = Vector2(24, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd4pi"]
+size = Vector2(24, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iluwv"]
+
+[node name="Pipe" type="Node2D"]
+z_index = 1
+script = ExtResource("1_cmdy5")
+score_sound = ExtResource("2_nesgg")
+
+[node name="PipeTop" type="StaticBody2D" parent="."]
+position = Vector2(0, -30)
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeTop"]
+position = Vector2(0, -67)
+texture = ExtResource("3_nip4j")
+region_enabled = true
+region_rect = Rect2(302, 1, 26, 134)
+metadata/_edit_lock_ = true
+
+[node name="TopHitbox" type="CollisionShape2D" parent="PipeTop"]
+position = Vector2(0, -67)
+shape = SubResource("RectangleShape2D_3ojlp")
+metadata/_edit_lock_ = true
+
+[node name="PipeBottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeBottom"]
+position = Vector2(0, 60)
+texture = ExtResource("3_nip4j")
+region_enabled = true
+region_rect = Rect2(330, 0, 26, 120)
+metadata/_edit_lock_ = true
+
+[node name="BottomHitbox" type="CollisionShape2D" parent="PipeBottom"]
+position = Vector2(0, 60.5)
+shape = SubResource("RectangleShape2D_qd4pi")
+metadata/_edit_lock_ = true
+
+[node name="ScoreArea" type="Area2D" parent="."]
+position = Vector2(-13, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(16, 0)
+scale = Vector2(0.168046, 5.96677)
+shape = SubResource("RectangleShape2D_iluwv")
+
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]

@@ -1,0 +1,148 @@
+[gd_scene load_steps=7 format=3 uid="uid://coe704d6on06m"]
+
+[ext_resource type="Texture2D" uid="uid://d1i5v10qnajux" path="res://xlbhdz8z.bmp" id="1_3ysdq"]
+[ext_resource type="Script" path="res://World/pipe_container.gd" id="2_inky5"]
+[ext_resource type="PackedScene" uid="uid://3vy3p01yp8v8" path="res://Bird/bird.tscn" id="3_tlfhr"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_3ykpm"]
+tile_data = PackedInt32Array(0, 655360, 0, 65536, 655360, 1, 131072, 655360, 2, 1, 720896, 0, 65537, 720896, 1, 131073, 720896, 2, 2, 786432, 0, 65538, 786432, 1, 131074, 786432, 2, 3, 851968, 0, 65539, 851968, 1, 131075, 851968, 2, 4, 917504, 0, 65540, 917504, 1, 131076, 917504, 2, 5, 983040, 0, 65541, 983040, 1, 131077, 983040, 2, 6, 1048576, 0, 65542, 1048576, 1, 131078, 1048576, 2, 7, 1114112, 0, 65543, 1114112, 1, 131079, 1114112, 2)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dam4r"]
+texture = ExtResource("1_3ysdq")
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:1/0/physics_layer_0/angular_velocity = 0.0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:2/0 = 0
+10:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:2/0/physics_layer_0/angular_velocity = 0.0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:2/0 = 0
+11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:2/0/physics_layer_0/angular_velocity = 0.0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:2/0 = 0
+12:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:2/0/physics_layer_0/angular_velocity = 0.0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+13:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:2/0/physics_layer_0/angular_velocity = 0.0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:2/0 = 0
+14:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:2/0/physics_layer_0/angular_velocity = 0.0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:2/0 = 0
+15:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:2/0/physics_layer_0/angular_velocity = 0.0
+15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:2/0 = 0
+16:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:2/0/physics_layer_0/angular_velocity = 0.0
+16:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:2/0 = 0
+17:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:2/0/physics_layer_0/angular_velocity = 0.0
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:1/0 = 0
+17:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:1/0/physics_layer_0/angular_velocity = 0.0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:0/0 = 0
+17:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:0/0/physics_layer_0/angular_velocity = 0.0
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:0/0 = 0
+16:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:0/0/physics_layer_0/angular_velocity = 0.0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:0/0 = 0
+15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:0/0/physics_layer_0/angular_velocity = 0.0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:0/0 = 0
+14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:0/0/physics_layer_0/angular_velocity = 0.0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:0/0 = 0
+13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:0/0/physics_layer_0/angular_velocity = 0.0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0 = 0
+12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:0/0/physics_layer_0/angular_velocity = 0.0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:0/0 = 0
+11:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:0/0/physics_layer_0/angular_velocity = 0.0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:1/0 = 0
+11:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:1/0/physics_layer_0/angular_velocity = 0.0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:1/0 = 0
+12:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:1/0/physics_layer_0/angular_velocity = 0.0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:1/0 = 0
+13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:1/0/physics_layer_0/angular_velocity = 0.0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:1/0 = 0
+14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:1/0/physics_layer_0/angular_velocity = 0.0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:1/0 = 0
+15:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:1/0/physics_layer_0/angular_velocity = 0.0
+15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:1/0 = 0
+16:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:1/0/physics_layer_0/angular_velocity = 0.0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_xyxnk"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dam4r")
+pattern_0 = SubResource("TileMapPattern_3ykpm")
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+visibility_layer = 4
+position = Vector2(0, -80)
+texture = ExtResource("1_3ysdq")
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 256)
+
+[node name="PipeContainer" type="Node" parent="."]
+script = ExtResource("2_inky5")
+
+[node name="PipeSpawner" type="Marker2D" parent="PipeContainer"]
+position = Vector2(72, -80)
+
+[node name="PipeCooldown" type="Timer" parent="PipeContainer"]
+autostart = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_xyxnk")
+format = 2
+layer_0/z_index = 2
+layer_0/tile_data = PackedInt32Array(65532, 655360, 0, 131068, 655360, 1, 196604, 655360, 2, 65533, 720896, 0, 131069, 720896, 1, 196605, 720896, 2, 65534, 786432, 0, 131070, 786432, 1, 196606, 786432, 2, 65535, 851968, 0, 131071, 851968, 1, 196607, 851968, 2, 0, 917504, 0, 65536, 917504, 1, 131072, 917504, 2, 1, 983040, 0, 65537, 983040, 1, 131073, 983040, 2, 2, 1048576, 0, 65538, 1048576, 1, 131074, 1048576, 2, 3, 1114112, 0, 65539, 1114112, 1, 131075, 1114112, 2, 65524, 655360, 0, 131060, 655360, 1, 196596, 655360, 2, 65525, 720896, 0, 131061, 720896, 1, 196597, 720896, 2, 65526, 786432, 0, 131062, 786432, 1, 196598, 786432, 2, 65527, 851968, 0, 131063, 851968, 1, 196599, 851968, 2, 65528, 917504, 0, 131064, 917504, 1, 196600, 917504, 2, 65529, 983040, 0, 131065, 983040, 1, 196601, 983040, 2, 65530, 1048576, 0, 131066, 1048576, 1, 196602, 1048576, 2, 65531, 1114112, 0, 131067, 1114112, 1, 196603, 1114112, 2, 4, 655360, 0, 65540, 655360, 1, 131076, 655360, 2, 5, 720896, 0, 65541, 720896, 1, 131077, 720896, 2, 6, 786432, 0, 65542, 786432, 1, 131078, 786432, 2, 7, 851968, 0, 65543, 851968, 1, 131079, 851968, 2, 8, 917504, 0, 65544, 917504, 1, 131080, 917504, 2, 9, 983040, 0, 65545, 983040, 1, 131081, 983040, 2, 10, 1048576, 0, 65546, 1048576, 1, 131082, 1048576, 2, 11, 1114112, 0, 65547, 1114112, 1, 131083, 1114112, 2)
+
+[node name="Bird" parent="." instance=ExtResource("3_tlfhr")]
+visibility_layer = 2
+z_index = 3
+position = Vector2(-32, -88)
+collision_mask = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -81)
+zoom = Vector2(5, 5)
+
+[connection signal="timeout" from="PipeContainer/PipeCooldown" to="PipeContainer" method="_on_pipe_cooldown_timeout"]
